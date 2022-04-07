@@ -1,4 +1,3 @@
-import React from 'react';
 import { ICountry } from "../model/country"
 
 export interface ICountryLi {

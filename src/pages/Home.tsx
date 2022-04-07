@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext } from 'react';
 import Countries from '../components/Countries';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
@@ -23,7 +23,7 @@ const Home = () => {
     };
 
     const onFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo);
+        console.error('Failed:', errorInfo);
     };
 
 
