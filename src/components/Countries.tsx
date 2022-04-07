@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
 import Card from './Card';
 import { ICountry } from "../model/country"
 
@@ -11,8 +10,13 @@ const Countries = () => {
 
     //Quand le composant est monté
     useEffect(() => {
-        axios.get("https://restcountries.com/v3.1/all")
-            .then((res) => setData(res.data));
+        const fetchData = async () => {
+            const response = await fetch("https://restcountries.com/v3.1/all");
+            const jsonData = await response.json();
+            setData(jsonData)
+        };
+
+        fetchData();
     }, []);
 
     return (
